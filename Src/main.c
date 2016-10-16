@@ -52,6 +52,11 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
+CAN_HandleTypeDef hcan1;
+CAN_HandleTypeDef hcan2;
+
+CRC_HandleTypeDef hcrc;
+
 osThreadId defaultTaskHandle;
 
 /* USER CODE BEGIN PV */
@@ -64,6 +69,9 @@ void SystemClock_Config(void);
 void Error_Handler(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
+static void MX_CAN1_Init(void);
+static void MX_CAN2_Init(void);
+static void MX_CRC_Init(void);
 void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
@@ -93,6 +101,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
+  MX_CAN1_Init();
+  MX_CAN2_Init();
+  MX_CRC_Init();
 
   /* USER CODE BEGIN 2 */
 
@@ -229,6 +240,64 @@ static void MX_ADC1_Init(void)
 
 }
 
+/* CAN1 init function */
+static void MX_CAN1_Init(void)
+{
+
+  hcan1.Instance = CAN1;
+  hcan1.Init.Prescaler = 16;
+  hcan1.Init.Mode = CAN_MODE_NORMAL;
+  hcan1.Init.SJW = CAN_SJW_1TQ;
+  hcan1.Init.BS1 = CAN_BS1_1TQ;
+  hcan1.Init.BS2 = CAN_BS2_1TQ;
+  hcan1.Init.TTCM = DISABLE;
+  hcan1.Init.ABOM = DISABLE;
+  hcan1.Init.AWUM = DISABLE;
+  hcan1.Init.NART = DISABLE;
+  hcan1.Init.RFLM = DISABLE;
+  hcan1.Init.TXFP = DISABLE;
+  if (HAL_CAN_Init(&hcan1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
+
+/* CAN2 init function */
+static void MX_CAN2_Init(void)
+{
+
+  hcan2.Instance = CAN2;
+  hcan2.Init.Prescaler = 16;
+  hcan2.Init.Mode = CAN_MODE_NORMAL;
+  hcan2.Init.SJW = CAN_SJW_1TQ;
+  hcan2.Init.BS1 = CAN_BS1_1TQ;
+  hcan2.Init.BS2 = CAN_BS2_1TQ;
+  hcan2.Init.TTCM = DISABLE;
+  hcan2.Init.ABOM = DISABLE;
+  hcan2.Init.AWUM = DISABLE;
+  hcan2.Init.NART = DISABLE;
+  hcan2.Init.RFLM = DISABLE;
+  hcan2.Init.TXFP = DISABLE;
+  if (HAL_CAN_Init(&hcan2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
+
+/* CRC init function */
+static void MX_CRC_Init(void)
+{
+
+  hcrc.Instance = CRC;
+  if (HAL_CRC_Init(&hcrc) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
+
 /** Configure pins as 
         * Analog 
         * Input 
@@ -242,6 +311,7 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
 }
 

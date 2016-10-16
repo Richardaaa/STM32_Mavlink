@@ -17,6 +17,8 @@
 "stm_mavlink\stm32f4xx_hal_pwr.o"
 "stm_mavlink\stm32f4xx_hal_gpio.o"
 "stm_mavlink\stm32f4xx_hal_flash.o"
+"stm_mavlink\stm32f4xx_hal_can.o"
+"stm_mavlink\stm32f4xx_hal_crc.o"
 "stm_mavlink\event_groups.o"
 "stm_mavlink\queue.o"
 "stm_mavlink\tasks.o"

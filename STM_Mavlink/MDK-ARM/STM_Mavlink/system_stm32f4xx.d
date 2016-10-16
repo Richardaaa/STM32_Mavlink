@@ -24,6 +24,8 @@ stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
+stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h
+stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h
 stm_mavlink\system_stm32f4xx.o: ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h

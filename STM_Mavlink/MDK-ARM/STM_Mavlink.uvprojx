@@ -334,7 +334,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F405xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../../Inc;../../Drivers/STM32F4xx_HAL_Driver/Inc;../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../../Middlewares/Third_Party/FreeRTOS/Source/include;../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;../../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../../Inc;  ../../Drivers/STM32F4xx_HAL_Driver/Inc;  ../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;  ../../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;  ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include;  ../../Middlewares/Third_Party/FreeRTOS/Source/include;  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;  ../../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -374,9 +374,6 @@
         </TargetArmAds>
       </TargetOption>
       <Groups>
-        <Group>
-          <GroupName>::CMSIS</GroupName>
-        </Group>
         <Group>
           <GroupName>Drivers/CMSIS</GroupName>
           <Files>
@@ -480,6 +477,16 @@
               <FileType>1</FileType>
               <FilePath>../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f4xx_hal_can.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f4xx_hal_crc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -561,6 +568,9 @@
               <FilePath>../../Src/stm32f4xx_hal_timebase_TIM.c</FilePath>
             </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
     </Target>
